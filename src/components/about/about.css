@@ -1,0 +1,177 @@
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+}
+
+.about-container p {
+  line-height: 1;
+  padding: 0 20px;
+}
+
+.profile-description-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.about-container .profile-image {
+  text-align: center;
+  align-self: center;
+  padding: 30px;
+  padding-bottom: 50px;
+}
+
+.navbar-logo-about-img {
+  min-width: 360px;
+  max-height: 110px;
+}
+
+.navbar-logo-about {
+  min-width: 400px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.4);
+  max-width: 550px;
+  margin: 24px auto;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.projects-container .project {
+  height: 160px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 32px;
+}
+
+.projects-container .project-name {
+  font-size: 16px;
+}
+
+.projects-container .project-number {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.our-team-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48px;
+  padding-top: 64px;
+  width: 100%;
+}
+
+.our-team {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+.our-team img {
+  width: 100%;
+}
+
+.our-team .team-member {
+  margin: 0 4px;
+  position: relative;
+}
+
+.our-team .designation {
+  position: absolute;
+  bottom: 30px;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+}
+
+.team-member img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  max-block-size: 340px;
+}
+
+.about-container .our-mission {
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container .our-mission .quote-icon {
+  opacity: 0.2;
+  height: 80px;
+}
+
+.about-container .our-mission p {
+  font-size: 40px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .our-team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-team img {
+    height: 250px;
+    width: 300px;
+    object-fit: cover;
+    padding-bottom: 20px;
+  }
+
+  .navbar-logo-about-img {
+    min-width: 250px;
+    max-height: 60px;
+  }
+
+  .about-container .our-mission p {
+    font-size: 18px;
+    font-style: italic;
+  }
+}
+
+.about_description_container {
+  padding: 5%;
+  width: 100%;
+  box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.4);
+  -webkit-filter: drop-shadow(0 4px 16px -6px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 4px 16px -6px rgba(0, 0, 0, 0.4));
+  border-radius: 40px;
+  overflow: hidden;
+  text-decoration: none;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  text-align: justify;
+}
+
+@media (max-width: 1668px) {
+  /* Reorder the second div above the first div */
+  .profile-description-container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .profile-description-container > div:nth-child(1) {
+    order: 2; /* Move the first div below (order 2) */
+  }
+
+  .profile-description-container > div:nth-child(2) {
+    order: 1; /* Move the second div above (order 1) */
+  }
+
+  .about-container .our-mission p {
+    font-size: 32px;
+    font-style: italic;
+  }
+}

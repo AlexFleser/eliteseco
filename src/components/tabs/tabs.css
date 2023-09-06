@@ -1,0 +1,22 @@
+.tabs-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1520px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.icon-button {
+  display: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .icon-button {
+    display: contents !important;
+  }
+
+  .tabs-container {
+    padding-top: 30px;
+  }
+}

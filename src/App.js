@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-function App() {
+import { Route, Routes, Navigate } from 'react-router-dom';
+import React from 'react'
+import {  Home, Servicii, Solutii, AboutUs } from './components'
+import {Header, Footer} from './containers'
+import {Pages} from "./components/navbar/Navbar"
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Header />
+        <Routes>
+        <Route
+          path="/"
+          element={
+           <Home/>
+          }
+        ></Route>
+          <Route
+          path={Pages.Solutii}
+          element={
+           <Solutii />
+          }
+        ></Route>
+          <Route
+          path={Pages.Servicii}
+          element={
+            <Servicii />
+          }
+        ></Route>
+          <Route
+          path={Pages.DespreNoi}
+          element={
+           <AboutUs />
+          }
+        ></Route>
+        <Route path="*" element={<Navigate to={Pages.Home} />}></Route>
+        </Routes>   
+        {/* <div className="wallpaper-container-footer" /> */}
+
+        <Footer/>  
+    </>
+  )
 }
 
-export default App;
+export default App

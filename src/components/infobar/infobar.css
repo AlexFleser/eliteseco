@@ -1,0 +1,95 @@
+.info-bar {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  /* ff 3.6+ */
+  background: -moz-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 100%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 100%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 100%
+  );
+
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  z-index: 999;
+  padding-top: 5px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 50% 30% 20%;
+  list-style: none;
+  text-align: center;
+  width: 95%;
+  margin-right: 2rem;
+  max-width: 1000px;
+}
+
+.icon-color {
+  color: #cf0101;
+  margin-top: 10px;
+  justify-self: flex-end;
+}
+
+.info-item {
+  padding: 10px;
+  padding-right: 14px;
+  border-right: 2px solid rgba(238, 238, 238, 0.1);
+  border-bottom: 2px solid rgba(238, 238, 238, 0.1);
+  display: inline-block;
+  justify-content: end;
+}
+
+.info-text {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  justify-self: flex-end;
+  padding-left: 10px;
+}
+
+.text-wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: end;
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .info-bar {
+    display: none;
+  }
+}
