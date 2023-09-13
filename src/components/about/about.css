@@ -152,8 +152,11 @@
   border-radius: 40px;
   overflow: hidden;
   text-decoration: none;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "system-ui", "-apple-system", "Roboto", "Helvetica", "Arial", sans-serif;
   text-align: justify;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
 }
 
 @media (max-width: 1668px) {

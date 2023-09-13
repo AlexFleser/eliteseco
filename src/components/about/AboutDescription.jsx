@@ -3,7 +3,7 @@ import "./about.css";
 
 const AboutDescription = () => {
   return (
-    <div className="cards__item__text_info about_description_container">
+    <div className="about_description_container">
       <p>
         In Iunie 2012, doi specialisti in sisteme de securitate cu o experienta
         de peste 10 ani in domeniu, angajati la companii de top pe piata, au pus
@@ -20,7 +20,7 @@ const AboutDescription = () => {
         Pornind de la solutii in sisteme de supraveghere video, detectie si
         avertizare incediu, interfonie, automatizari usi si porti, sisteme de
         acces cu turnicheti la servicii de proiectare, instalare, mentenanta si
-        service, Elitseco este mereu aprope de clienti.
+        service, Elitseco SRL este mereu aproape de clientii sai.
       </p>
     </div>
   );

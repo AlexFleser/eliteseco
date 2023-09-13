@@ -87,8 +87,7 @@ const About = () => {
       <div className="our-mission">
         {/* <img className="quote-icon" src="images/quote.png" alt="" /> */}
         <p className="cards__item__text_info" style={{ padding: "12px" }}>
-          Securitatea este o prioritate, nu o optiune! Elitseco SRL este mereu
-          aproape de clientii sai.
+          Securitatea este o prioritate, nu o optiune!
         </p>
       </div>
     </div>

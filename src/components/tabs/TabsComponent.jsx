@@ -1,16 +1,17 @@
-import React from "react";
+import React, { lazy, Suspense } from 'react';
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "./tabs.css";
-import SurveilenceContainer from "./SurveilenceCards";
-import DetectionCards from "./DetectionCards";
-import AsistenceCards from "./AsistenceCard";
-import AutomationCard from "./AutomationCard";
-import ParkingCard from "./ParkingCard";
-import NetworkCards from "./NetworkCard";
+
+const SurveilenceContainer = lazy(() => import('./SurveilenceCards'));
+const DetectionCards = lazy(() => import('./DetectionCards'));
+const AsistenceCards = lazy(() => import('./AsistenceCard'));
+const AutomationCard = lazy(() => import('./AutomationCard'));
+const ParkingCard = lazy(() => import('./ParkingCard'));
+const NetworkCards = lazy(() => import('./NetworkCard'));
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -24,11 +25,13 @@ function TabPanel(props) {
       style={{ width: "100%", margin: "0 auto" }}
       {...other}
     >
+       <Suspense fallback={<div>Loading...</div>}>
       {value === index && (
         <Box sx={{ p: 1 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
+      </Suspense>
     </div>
   );
 }
