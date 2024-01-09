@@ -1,17 +1,18 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import SpinningLoader from "../loader/SpinningLoader";
 import "./tabs.css";
 
-const SurveilenceContainer = lazy(() => import('./SurveilenceCards'));
-const DetectionCards = lazy(() => import('./DetectionCards'));
-const AsistenceCards = lazy(() => import('./AsistenceCard'));
-const AutomationCard = lazy(() => import('./AutomationCard'));
-const ParkingCard = lazy(() => import('./ParkingCard'));
-const NetworkCards = lazy(() => import('./NetworkCard'));
+const SurveilenceContainer = lazy(() => import("./SurveilenceCards"));
+const DetectionCards = lazy(() => import("./DetectionCards"));
+const AsistenceCards = lazy(() => import("./AsistenceCard"));
+const AutomationCard = lazy(() => import("./AutomationCard"));
+const ParkingCard = lazy(() => import("./ParkingCard"));
+const NetworkCards = lazy(() => import("./NetworkCard"));
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -23,14 +24,16 @@ function TabPanel(props) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       style={{ width: "100%", margin: "0 auto" }}
-      {...other}
-    >
-       <Suspense fallback={<div>Loading...</div>}>
-      {value === index && (
-        <Box sx={{ p: 1 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {...other}>
+      <Suspense
+        fallback={
+            <SpinningLoader />
+        }>
+        {value === index && (
+          <Box sx={{ p: 1 }}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
       </Suspense>
     </div>
   );
@@ -68,12 +71,10 @@ const TabsComponent = () => {
         display={"flex"}
         justifyContent={"space-between"}
         gap={"120px"}
-        paddingBottom={"20px"}
-      >
+        paddingBottom={"20px"}>
         <IconButton
           className="icon-button"
-          onClick={() => switchToPreviousTab()}
-        >
+          onClick={() => switchToPreviousTab()}>
           <i
             class="fa-sharp fa-solid fa-arrow-left fa-xl"
             style={{ color: "#cf0101" }}
@@ -90,8 +91,7 @@ const TabsComponent = () => {
         display={"flex"}
         justifyContent={"center"}
         sx={{ borderBottom: 1, borderColor: "divider" }}
-        maxWidth={"90%"}
-      >
+        maxWidth={"90%"}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -105,8 +105,7 @@ const TabsComponent = () => {
             ".Mui-selected": {
               color: `red !important`,
             },
-          }}
-        >
+          }}>
           <Tab label="Sisteme de supraveghere video" {...a11yProps(0)} />
           <Tab label="Detectie si avertizare incendiu" {...a11yProps(1)} />
           <Tab label="Apelare asistenta" {...a11yProps(2)} />

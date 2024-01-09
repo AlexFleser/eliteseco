@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <Link to={Pages.Home} className="navbar-logo" onClick={closeMobileMenu}>
             <img className="navbar-logo-img" src="images/logo8.png" alt="" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>

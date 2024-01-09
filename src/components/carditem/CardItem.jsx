@@ -1,4 +1,5 @@
 import React from "react";
+import CachedImage from "../cachedimage/CachedImage";
 
 const CardItem = (props) => {
   return (
@@ -6,11 +7,11 @@ const CardItem = (props) => {
       <li className="cards__item">
         <a className="cards__item__link" href={props.path}>
           <figure className="cards__item__pic-wrap" data-category={props.label}>
-            <img
+            <CachedImage
               className="cards__item__img"
               alt=""
               src={props.src}
-              loading="lazy"
+              hasStyles
             />
           </figure>
           <div className="cards__item__info">

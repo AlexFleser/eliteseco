@@ -1,21 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-// import {  Home, Servicii, Solutii, AboutUs } from './components'
+import {  Home, Servicii, Solutii, AboutUs } from './components'
 import {Header, Footer} from './containers'
 import {Pages} from "./components/navbar/Navbar"
-
-const Home = lazy(() => import('./components/pages/Home'));
-const Servicii = lazy(() => import('./components/pages/Servicii'));
-const Solutii = lazy(() => import('./components/pages/Solutii'));
-const AboutUs = lazy(() => import('./components/pages/AboutUs'));
+import ImageLoader from "./components/imageloader/ImageLoader"
 
 const App = () => {
   return (
     <>
       <Header />
-      <Suspense fallback={<div>Loading...</div>}>
+      <ImageLoader />
         <Routes>
           <Route
             path="/"
@@ -35,7 +31,6 @@ const App = () => {
           ></Route>
           <Route path="*" element={<Navigate to={Pages.Home} />}></Route>
         </Routes>
-      </Suspense>
         {/* <div className="wallpaper-container-footer" /> */}
       <Footer />
     </>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./dragPictureEffect.css";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Pages } from "../navbar/Navbar";
+import SpinningLoader from "../loader/SpinningLoader";
+import CachedImage from "../cachedimage/CachedImage";
+import "./dragPictureEffect.css";
 
 const DragPictureEffect = ({ pictures, captions }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,8 +41,8 @@ const DragPictureEffect = ({ pictures, captions }) => {
     <div className="drag-picture-container" ref={containerRef}>
       {!imagesLoaded ? (
         <div className="spiner-container">
-          <div className="loading-spinner" /> {/* Add a loading spinner */}
-        </div>
+        <SpinningLoader/>
+         </div>
       ) : (
         <div
           className="slider"
@@ -52,7 +54,7 @@ const DragPictureEffect = ({ pictures, captions }) => {
         >
           {pictures.map((picture, index) => (
             <div key={index} className="picture">
-              <img src={picture} alt={`Pic ${index + 1}`} loading="lazy" />
+              <CachedImage src={picture} alt={`Pic ${index + 1}`} />
               <div className="header">
                 <p>{captions[index].line1}</p>
                 <p>{captions[index].line2}</p>

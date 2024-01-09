@@ -59,7 +59,7 @@ const Footer = () => {
           <Link to="/" className="social-logo">
             <img className="footer-logo-img" src="images/logo8.png" alt="" />
           </Link>
-          <small className="website-rights">ELITSECO ©2023</small>
+          <small className="website-rights">ELITSECO ©{new Date().getFullYear()}</small>
           <div className="social-icons">
             <Link
               className="social-icon-link facebook"
